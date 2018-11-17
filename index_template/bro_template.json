@@ -1,0 +1,21 @@
+{
+  "order" : 1,
+  "template" : "logstash-bro-*",
+  "mappings" : {
+    "_default_" : {
+      "properties" : {
+        "conn_duration" : { "type" : "double"},
+        "file_analysis_duration" : { "type" : "double"},
+        "ref_domain" : {"type" : "text", "fields" : {"keyword" : {"type" : "keyword"}}},
+        "domain" : {"type" : "text", "fields" : { "keyword" : {"type" : "keyword"}}},
+        "src_ip" : { "type" : "ip" },
+        "dst_ip" : { "type" : "ip" },
+        "ips" : { "type" : "ip" },
+        "src_location" : { "type": "geo_point"},
+        "dst_location" : { "type": "geo_point"},
+        "domain_ips" : { "type" : "ip" }
+      }
+    }
+  },
+  "aliases" : { }
+}
